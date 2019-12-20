@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsView"
+    android:background="#180159">
+
+    <TextView
+        android:id="@+id/detailtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Title"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
+
+    <ImageView
+        android:id="@+id/detailimage"
+        android:layout_below="@+id/detailtitle"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/textdetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailimage"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:text="Text"/>
+
+
+    <TextView
+        android:id="@+id/detailspoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textdetails"
+        android:textColor="#fff"
+        android:text="text point"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detailrecycle"
+        android:layout_below="@id/detailspoints"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>
