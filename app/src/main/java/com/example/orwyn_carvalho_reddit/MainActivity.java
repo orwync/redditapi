@@ -94,7 +94,9 @@ public class MainActivity extends AppCompatActivity implements PostAdapter.Onite
                                 int points = ups-downs;
                                 String pic = data.getString("thumbnail");
                                 String selftext = data.getString("selftext");
-                                comment = data.getString("url");
+                                comment = data.getString("permalink");
+                                comment = "https://www.reddit.com"+comment;
+                                comment = comment.substring(0,comment.length()-1)+".json";
 
 
                                 mArrayList.add(new Posts(title,pic,String.valueOf(points),selftext,comment));

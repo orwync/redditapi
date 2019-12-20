@@ -73,15 +73,25 @@ public class DetailsView extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            Log.d("SHOW","HEllo");
                             JSONArray array = response.getJSONObject("data").getJSONArray("children");
 
                             for(int i=0;i<array.length();i++){
-                                JSONObject data = array.getJSONObject(i).getJSONObject("data").getJSONObject("replies");
-                                String body = data.getString("body");
+                                JSONArray children = array.getJSONObject(i).getJSONObject("data").getJSONObject("replies").getJSONObject("data").getJSONArray("children");
+
+                                String body="";
+                                for(int j=0;j<children.length();j++)
+                                {
+                                    JSONObject child = children.getJSONObject(j);
+                                    body = child.getString("body");
+                                    Log.d("SHOW",body);
+                                    mArrayList.add(new Details(body));
+                                }
 
 
 
-                                mArrayList.add(new Details(body));
+
+
                             }
 
                             mDetailsAdapter = new DetailsAdapter(DetailsView.this, mArrayList);
